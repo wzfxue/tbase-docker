@@ -1,0 +1,24 @@
+list="master coord node1 node2"
+
+portlist=(
+"-p 50001:50001"
+"-p 30004:30004 -p 30014:30014"
+"-p 20008:20008 -p 20018:20018"
+);
+
+c=${#portlist[*]};
+i=0;
+while (($c>$i))
+do
+  var=${portlist[$i]};
+  echo $var;
+  i=$(($i+1));
+done;
+echo "get...  ${portlist[1]}"
+
+idx=0
+for port in $portlist
+do
+  echo ${portlist[$idx]}
+  idx=$((${idx}+1))
+done
