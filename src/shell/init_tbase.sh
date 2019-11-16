@@ -15,7 +15,7 @@ echo "从master节点初始化..."
   docker cp configs/initpgxc.sh tbase-master:/home/postgres/initpgxc.sh
   docker exec tbase-master sh -c "chown postgres:postgres /home/postgres/initpgxc.sh && chmod +x /home/postgres/initpgxc.sh"
   echo "执行tbase初始化..."
-  #docker exec -it tbase-master sh -c /home/postgres/initpgxc.sh
+  docker exec -it tbase-master sh -c /home/postgres/initpgxc.sh
   #清理
-  docker exec -it tbase-master sh -c "su - postgres -c 'pgxc_ctl clean all'"
-  docker exec -it tbase-master sh -c "su - postgres -c 'pgxc_ctl init all'"
+  #docker exec -it tbase-master sh -c "su - postgres -c 'pgxc_ctl clean all'"
+  #docker exec -it tbase-master sh -c "su - postgres -c 'pgxc_ctl init all'"
